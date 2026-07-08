@@ -10787,5 +10787,1513 @@
     "center_city": "Delhi",
     "count": 10,
     "source": "Open-Meteo Air Quality API"
+  },
+  "nearby:17.39:78.49:50": {
+    "localities": [
+      {
+        "name": "Kandukur mandal",
+        "lat": 17.159774774774775,
+        "lon": 78.4867,
+        "distance_km": 25.0,
+        "aqi": 29,
+        "composition": {
+          "pm2_5": 6.9,
+          "pm10": 9.3,
+          "no2": 7.7,
+          "so2": 3.9,
+          "o3": 59.0,
+          "co": 159.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Traffic Corridor",
+        "landUseIcon": "🚗",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 29 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 6.9,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Kandukur mandal is currently 29 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 159.0 µg/m³ (0.0× guideline) and O₃ at 59.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 29,
+            "average_ers": 6,
+            "cleanest_city": "Kandukur mandal",
+            "most_polluted_city": "Kandukur mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Kandukur mandal"
+          }
+        }
+      },
+      {
+        "name": "Hyderabad",
+        "lat": 17.385,
+        "lon": 78.58110253134785,
+        "distance_km": 10.0,
+        "aqi": 29,
+        "composition": {
+          "pm2_5": 6.9,
+          "pm10": 9.3,
+          "no2": 7.7,
+          "so2": 3.9,
+          "o3": 59.0,
+          "co": 308.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
+        "landUseIcon": "🌊",
+        "note": "Rapid urban expansion and construction activity drive coarse PM. Pharmaceutical and IT corridor industrial zones contribute to VOC and NO₂ loading. Relatively flat terrain offers some pollutant dispersion advantage.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Medchal Industrial Area",
+              "lat": 17.4,
+              "lon": 78.595,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 2.2
+            },
+            {
+              "name": "Nacharam Industrial Estate",
+              "lat": 17.435,
+              "lon": 78.57,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2"
+              ],
+              "distance_km": 5.7
+            },
+            {
+              "name": "Cherlapalli Industrial Estate",
+              "lat": 17.3299,
+              "lon": 78.58,
+              "type": "mixed",
+              "pollutants": [
+                "PM2.5",
+                "NO2"
+              ],
+              "distance_km": 6.1
+            },
+            {
+              "name": "Jeedimetla Industrial Area",
+              "lat": 17.455,
+              "lon": 78.515,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 10.5
+            },
+            {
+              "name": "Hitech City / HITEC",
+              "lat": 17.3588,
+              "lon": 78.4029,
+              "type": "it_pharma",
+              "pollutants": [
+                "NO2",
+                "PM2.5"
+              ],
+              "distance_km": 19.1
+            }
+          ],
+          "water_bodies": [
+            {
+              "name": "Musi River",
+              "lat": 17.385,
+              "lon": 78.49,
+              "type": "river",
+              "affects_humidity": true,
+              "distance_km": 9.7
+            },
+            {
+              "name": "Hyderabad Tank",
+              "lat": 17.37,
+              "lon": 78.47,
+              "type": "reservoir",
+              "affects_humidity": true,
+              "distance_km": 11.9
+            }
+          ],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 29 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": "Rapid urban expansion and construction activity drive coarse PM. Pharmaceutical and IT corridor industrial zones contribute to VOC and NO₂ loading. Relatively flat terrain offers some pollutant dispersion advantage."
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 6.9,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Hyderabad is currently 29 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 308.0 µg/m³ (0.0× guideline) and O₃ at 59.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 29,
+            "average_ers": 6,
+            "cleanest_city": "Hyderabad",
+            "most_polluted_city": "Hyderabad",
+            "trend": "Stable",
+            "highest_risk_region": "Hyderabad"
+          }
+        }
+      },
+      {
+        "name": "Balapur mandal",
+        "lat": 17.29490990990991,
+        "lon": 78.4867,
+        "distance_km": 10.0,
+        "aqi": 29,
+        "composition": {
+          "pm2_5": 6.9,
+          "pm10": 9.3,
+          "no2": 7.7,
+          "so2": 3.9,
+          "o3": 59.0,
+          "co": 249.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
+        "landUseIcon": "🌊",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Cherlapalli Industrial Estate",
+              "lat": 17.3299,
+              "lon": 78.58,
+              "type": "mixed",
+              "pollutants": [
+                "PM2.5",
+                "NO2"
+              ],
+              "distance_km": 10.6
+            },
+            {
+              "name": "Hitech City / HITEC",
+              "lat": 17.3588,
+              "lon": 78.4029,
+              "type": "it_pharma",
+              "pollutants": [
+                "NO2",
+                "PM2.5"
+              ],
+              "distance_km": 11.4
+            },
+            {
+              "name": "Medchal Industrial Area",
+              "lat": 17.4,
+              "lon": 78.595,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 16.4
+            },
+            {
+              "name": "Nacharam Industrial Estate",
+              "lat": 17.435,
+              "lon": 78.57,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2"
+              ],
+              "distance_km": 17.9
+            },
+            {
+              "name": "Jeedimetla Industrial Area",
+              "lat": 17.455,
+              "lon": 78.515,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 18.1
+            }
+          ],
+          "water_bodies": [
+            {
+              "name": "Hyderabad Tank",
+              "lat": 17.37,
+              "lon": 78.47,
+              "type": "reservoir",
+              "affects_humidity": true,
+              "distance_km": 8.5
+            },
+            {
+              "name": "Musi River",
+              "lat": 17.385,
+              "lon": 78.49,
+              "type": "river",
+              "affects_humidity": true,
+              "distance_km": 10.0
+            },
+            {
+              "name": "Osman Sagar Lake",
+              "lat": 17.363,
+              "lon": 78.375,
+              "type": "lake",
+              "affects_humidity": true,
+              "affects_dispersion": true,
+              "distance_km": 14.1
+            }
+          ],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 29 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 6.9,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Balapur mandal is currently 29 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 249.0 µg/m³ (0.0× guideline) and O₃ at 59.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 29,
+            "average_ers": 6,
+            "cleanest_city": "Balapur mandal",
+            "most_polluted_city": "Balapur mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Balapur mandal"
+          }
+        }
+      },
+      {
+        "name": "Moinabad mandal",
+        "lat": 17.385,
+        "lon": 78.25069367163034,
+        "distance_km": 25.0,
+        "aqi": 29,
+        "composition": {
+          "pm2_5": 6.9,
+          "pm10": 9.3,
+          "no2": 7.7,
+          "so2": 3.9,
+          "o3": 59.0,
+          "co": 211.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
+        "landUseIcon": "🌊",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Hitech City / HITEC",
+              "lat": 17.3588,
+              "lon": 78.4029,
+              "type": "it_pharma",
+              "pollutants": [
+                "NO2",
+                "PM2.5"
+              ],
+              "distance_km": 16.4
+            }
+          ],
+          "water_bodies": [
+            {
+              "name": "Osman Sagar Lake",
+              "lat": 17.363,
+              "lon": 78.375,
+              "type": "lake",
+              "affects_humidity": true,
+              "affects_dispersion": true,
+              "distance_km": 13.4
+            }
+          ],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 29 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 6.9 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 6.9,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Moinabad mandal is currently 29 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 211.0 µg/m³ (0.0× guideline) and O₃ at 59.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 29,
+            "average_ers": 6,
+            "cleanest_city": "Moinabad mandal",
+            "most_polluted_city": "Moinabad mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Moinabad mandal"
+          }
+        }
+      },
+      {
+        "name": "Ameenpur mandal",
+        "lat": 17.544258284051025,
+        "lon": 78.31981832480687,
+        "distance_km": 25.0,
+        "aqi": 34,
+        "composition": {
+          "pm2_5": 8.1,
+          "pm10": 10.9,
+          "no2": 8.6,
+          "so2": 3.9,
+          "o3": 60.0,
+          "co": 189.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Traffic Corridor",
+        "landUseIcon": "🚗",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 34 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.1,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Ameenpur mandal is currently 34 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 189.0 µg/m³ (0.0× guideline) and O₃ at 60.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 34,
+            "average_ers": 6,
+            "cleanest_city": "Ameenpur mandal",
+            "most_polluted_city": "Ameenpur mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Ameenpur mandal"
+          }
+        }
+      },
+      {
+        "name": "Manoharabad mandal",
+        "lat": 17.745360360360362,
+        "lon": 78.4867,
+        "distance_km": 40.1,
+        "aqi": 34,
+        "composition": {
+          "pm2_5": 8.1,
+          "pm10": 10.9,
+          "no2": 8.6,
+          "so2": 3.9,
+          "o3": 60.0,
+          "co": 159.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Traffic Corridor",
+        "landUseIcon": "🚗",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 34 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.1,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Manoharabad mandal is currently 34 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 159.0 µg/m³ (0.0× guideline) and O₃ at 60.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 34,
+            "average_ers": 6,
+            "cleanest_city": "Manoharabad mandal",
+            "most_polluted_city": "Manoharabad mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Manoharabad mandal"
+          }
+        }
+      },
+      {
+        "name": "Medchal mandal",
+        "lat": 17.61022522522523,
+        "lon": 78.4867,
+        "distance_km": 25.0,
+        "aqi": 34,
+        "composition": {
+          "pm2_5": 8.1,
+          "pm10": 10.9,
+          "no2": 8.6,
+          "so2": 3.9,
+          "o3": 60.0,
+          "co": 181.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor",
+        "landUseIcon": "🏭",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Jeedimetla Industrial Area",
+              "lat": 17.455,
+              "lon": 78.515,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 17.5
+            }
+          ],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 34 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.1 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 6,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.1,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Medchal mandal is currently 34 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 6/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 181.0 µg/m³ (0.0× guideline) and O₃ at 60.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 34,
+            "average_ers": 6,
+            "cleanest_city": "Medchal mandal",
+            "most_polluted_city": "Medchal mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Medchal mandal"
+          }
+        }
+      },
+      {
+        "name": "Ranga Reddy",
+        "lat": 17.385,
+        "lon": 78.72270632836965,
+        "distance_km": 25.0,
+        "aqi": 36,
+        "composition": {
+          "pm2_5": 8.6,
+          "pm10": 12.0,
+          "no2": 8.6,
+          "so2": 4.5,
+          "o3": 63.0,
+          "co": 271.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor",
+        "landUseIcon": "🏭",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Medchal Industrial Area",
+              "lat": 17.4,
+              "lon": 78.595,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 13.7
+            },
+            {
+              "name": "Cherlapalli Industrial Estate",
+              "lat": 17.3299,
+              "lon": 78.58,
+              "type": "mixed",
+              "pollutants": [
+                "PM2.5",
+                "NO2"
+              ],
+              "distance_km": 16.3
+            },
+            {
+              "name": "Nacharam Industrial Estate",
+              "lat": 17.435,
+              "lon": 78.57,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2"
+              ],
+              "distance_km": 17.1
+            }
+          ],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 36 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 7,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.6,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Ranga Reddy is currently 36 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 7/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 271.0 µg/m³ (0.0× guideline) and O₃ at 63.0 µg/m³ (0.5× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 36,
+            "average_ers": 7,
+            "cleanest_city": "Ranga Reddy",
+            "most_polluted_city": "Ranga Reddy",
+            "trend": "Stable",
+            "highest_risk_region": "Ranga Reddy"
+          }
+        }
+      },
+      {
+        "name": "B. Pochampally mandal",
+        "lat": 17.385,
+        "lon": 78.86431012539144,
+        "distance_km": 40.1,
+        "aqi": 36,
+        "composition": {
+          "pm2_5": 8.6,
+          "pm10": 12.0,
+          "no2": 8.6,
+          "so2": 4.5,
+          "o3": 63.0,
+          "co": 201.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Traffic Corridor",
+        "landUseIcon": "🚗",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 36 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 7,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.6,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in B. Pochampally mandal is currently 36 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 7/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 201.0 µg/m³ (0.0× guideline) and O₃ at 63.0 µg/m³ (0.5× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 36,
+            "average_ers": 7,
+            "cleanest_city": "B. Pochampally mandal",
+            "most_polluted_city": "B. Pochampally mandal",
+            "trend": "Stable",
+            "highest_risk_region": "B. Pochampally mandal"
+          }
+        }
+      },
+      {
+        "name": "Ibrahimpatnam mandal",
+        "lat": 17.225741715948978,
+        "lon": 78.65358167519312,
+        "distance_km": 25.0,
+        "aqi": 36,
+        "composition": {
+          "pm2_5": 8.6,
+          "pm10": 12.0,
+          "no2": 8.6,
+          "so2": 4.5,
+          "o3": 63.0,
+          "co": 145.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor",
+        "landUseIcon": "🏭",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Cherlapalli Industrial Estate",
+              "lat": 17.3299,
+              "lon": 78.58,
+              "type": "mixed",
+              "pollutants": [
+                "PM2.5",
+                "NO2"
+              ],
+              "distance_km": 14.0
+            }
+          ],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 36 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 8.6 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 7,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 8.6,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Ibrahimpatnam mandal is currently 36 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 7/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 145.0 µg/m³ (0.0× guideline) and O₃ at 63.0 µg/m³ (0.5× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 36,
+            "average_ers": 7,
+            "cleanest_city": "Ibrahimpatnam mandal",
+            "most_polluted_city": "Ibrahimpatnam mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Ibrahimpatnam mandal"
+          }
+        }
+      },
+      {
+        "name": "Turkapalle (M) mandal",
+        "lat": 17.63981325448164,
+        "lon": 78.75371068030898,
+        "distance_km": 40.1,
+        "aqi": 44,
+        "composition": {
+          "pm2_5": 10.5,
+          "pm10": 13.7,
+          "no2": 11.2,
+          "so2": 4.6,
+          "o3": 60.0,
+          "co": 213.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Traffic Corridor",
+        "landUseIcon": "🚗",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 10.5 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 44 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 10.5 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 8,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 10.5,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Turkapalle (M) mandal is currently 44 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 8/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 213.0 µg/m³ (0.0× guideline) and O₃ at 60.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 44,
+            "average_ers": 8,
+            "cleanest_city": "Turkapalle (M) mandal",
+            "most_polluted_city": "Turkapalle (M) mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Turkapalle (M) mandal"
+          }
+        }
+      },
+      {
+        "name": "Keesara mandal",
+        "lat": 17.544258284051025,
+        "lon": 78.65358167519312,
+        "distance_km": 25.0,
+        "aqi": 44,
+        "composition": {
+          "pm2_5": 10.5,
+          "pm10": 13.7,
+          "no2": 11.2,
+          "so2": 4.6,
+          "o3": 60.0,
+          "co": 267.0,
+          "nh3": null
+        },
+        "category": "Good",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Improving",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor",
+        "landUseIcon": "🏭",
+        "note": "PM2.5 is the dominant pollutant, within guideline limits at 10.5 µg/m³.",
+        "nearby_features": {
+          "industrial_zones": [
+            {
+              "name": "Nacharam Industrial Estate",
+              "lat": 17.435,
+              "lon": 78.57,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2"
+              ],
+              "distance_km": 15.0
+            },
+            {
+              "name": "Medchal Industrial Area",
+              "lat": 17.4,
+              "lon": 78.595,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 17.2
+            },
+            {
+              "name": "Jeedimetla Industrial Area",
+              "lat": 17.455,
+              "lon": 78.515,
+              "type": "heavy",
+              "pollutants": [
+                "PM2.5",
+                "SO2",
+                "NO2"
+              ],
+              "distance_km": 17.7
+            }
+          ],
+          "water_bodies": [],
+          "traffic_corridors": [
+            {
+              "name": "ORR (Outer Ring Road)",
+              "type": "arterial",
+              "intensity": "very_high"
+            },
+            {
+              "name": "IRR (Inner Ring Road)",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Hitec City Road",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Madhapur-Gachibowli Corridor",
+              "type": "arterial",
+              "intensity": "high"
+            },
+            {
+              "name": "Somajiguda-Secunderabad Road",
+              "type": "arterial",
+              "intensity": "very_high"
+            }
+          ],
+          "seasonal_factors": {
+            "summer_heat": {
+              "season": "Apr-Jun",
+              "effect": "thermal_buildup"
+            },
+            "monsoon": {
+              "season": "Jul-Sep",
+              "effect": "improved_dispersal"
+            },
+            "pre_monsoon": {
+              "season": "May-Jun",
+              "frequency": "dust_storms"
+            }
+          }
+        },
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 44 (Good) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, within guideline limits at 10.5 µg/m³.",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Air quality is satisfactory. No health restrictions for the general population.",
+            "context": null
+          },
+          "risk": {
+            "score": 8,
+            "level": "Low",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 10.5,
+              "unit": "µg/m³"
+            },
+            "weather": "Weather conditions are helping disperse pollutants effectively.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Keesara mandal is currently 44 on the US AQI scale (Good), driven mainly by elevated PM2.5. The Environmental Risk Score is 8/100 (Low) with a Trend data is limited outlook. Main pollutant composition is CO at 267.0 µg/m³ (0.0× guideline) and O₃ at 60.0 µg/m³ (0.4× guideline). Local conditions are driven by site-specific pollutant composition and nearby urban activity.",
+          "kpis": {
+            "average_aqi": 44,
+            "average_ers": 8,
+            "cleanest_city": "Keesara mandal",
+            "most_polluted_city": "Keesara mandal",
+            "trend": "Stable",
+            "highest_risk_region": "Keesara mandal"
+          }
+        }
+      }
+    ],
+    "center_city": "Hyderabad",
+    "count": 12,
+    "source": "Open-Meteo Air Quality API"
   }
 }
