@@ -429,9 +429,26 @@ def health_recommendations(aqi):
 @cachetools.cached(cache=cachetools.TTLCache(maxsize=1024, ttl=3600))
 def get_city_coords(city):
     geolocator = Nominatim(user_agent="aeris_environmental_platform")
-    location = geolocator.geocode(city)
-    if location:
-        return location.latitude, location.longitude
+    try:
+        # Attempt network geocoding
+        location = geolocator.geocode(city, timeout=10)
+        if location:
+            return location.latitude, location.longitude
+    except Exception as e:
+        # Log and fall through to fallback methods
+        print(f"Geocoding error for '{city}': {e}")
+
+    # Fallback: try curated popular localities file (by slug)
+    try:
+        slug = slugify_city(city)
+        entries = POPULAR_LOCALITIES.get(slug) or POPULAR_LOCALITIES.get(city.strip().lower())
+        if entries and isinstance(entries, list) and len(entries) > 0:
+            # Prefer first locality as a reasonable center
+            entry = entries[0]
+            return float(entry.get("lat")), float(entry.get("lon"))
+    except Exception as e:
+        print(f"Popular locality fallback failed for '{city}': {e}")
+
     return None, None
 
 
