@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { getNearby } from "./services/api";
-import { getDemoFallback, HYD_CENTER } from "./hyderabadFallback";
+import { getHyderabadFallback, HYD_CENTER } from "./hyderabadFallback";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // AQI helpers (pure — no hardcoded city data)
@@ -203,7 +203,6 @@ function useNearbyAQI(propLat, propLon, propCity) {
   const [usingFallback, setUsingFallback] = useState(false);
   const [dataSource, setDataSource] = useState(null);
   const [error, setError] = useState(null);
-  const [demoCity, setDemoCity] = useState('hyderabad');
 
   const fetchNearbyData = useCallback(async (lat, lon) => {
     setLoading(true);
@@ -219,22 +218,22 @@ function useNearbyAQI(propLat, propLon, propCity) {
         setUsingFallback(false);
       } else {
         // Activate Hyderabad fallback when no live localities are available
-        const fallback = getDemoFallback(demoCity, lat, lon, 70);
+        const fallback = getHyderabadFallback(lat, lon, 70);
         setLocalities(fallback);
-        setCenterCity(`${demoCity.charAt(0).toUpperCase() + demoCity.slice(1)} (Demo)`);
+        setCenterCity("Hyderabad (Demo)");
         setDataSource("fallback");
         setUsingFallback(true);
       }
     } catch {
       // API failed — use Hyderabad fallback
-      const fallback = getDemoFallback(demoCity, lat, lon, 70);
+      const fallback = getHyderabadFallback(lat, lon, 70);
       setLocalities(fallback);
-      setCenterCity(`${demoCity.charAt(0).toUpperCase() + demoCity.slice(1)} (Demo)`);
+      setCenterCity("Hyderabad (Demo)");
       setDataSource("fallback");
       setUsingFallback(true);
     }
     setLoading(false);
-  }, [demoCity]);
+  }, []);
 
   useEffect(() => {
     if (propLat != null && propLon != null && permissionState === "idle") {
@@ -273,12 +272,10 @@ function useNearbyAQI(propLat, propLon, propCity) {
 
   const loadHyderabadDemo = useCallback(() => {
     const { lat, lon } = HYD_CENTER;
-    setDemoCity('hyderabad');
     setUserCoords({ lat, lon });
     setPermissionState("granted");
     fetchNearbyData(lat, lon);
   }, [fetchNearbyData]);
-
 
   return {
     permissionState, userCoords, localities, centerCity,
@@ -579,10 +576,6 @@ export default function NearbyAQIRanking({ lat: propLat, lon: propLon, city: pro
             Discover, compare, and understand air quality across localities within 50 km of your position.
           </p>
         </div>
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginRight: '0.5rem' }}>Demo:</div>
-          <button className="aeris-btn-ghost" onClick={loadHyderabadDemo} style={{ textTransform: 'capitalize' }}>Hyderabad</button>
-        </div>
         {centerCity && (
           <div className="nearby-center-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -633,7 +626,7 @@ export default function NearbyAQIRanking({ lat: propLat, lon: propLon, city: pro
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
-          Live nearby data was unavailable for this location. Showing {centerCity} locality data for demonstration.
+          Live nearby data was unavailable for this location. Showing Hyderabad locality data for demonstration.
           Composition values are derived from known area characteristics — not real-time measurements.
         </div>
       )}

@@ -4,7 +4,6 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
 import api from "./services/api";
-import { getDemoHeatmap } from "./hyderabadFallback";
 
 function getAQIColor(aqi) {
   if (aqi <= 50)  return "#22C55E";
@@ -77,12 +76,9 @@ export default function AQIHeatmap({ fullscreen = false }) {
         const res = await api.get("/aqi-heatmap");
         if (!active) return;
         const payload = Array.isArray(res?.data) ? res.data : [];
-        let formatted = payload
+        const formatted = payload
           .filter((item) => item && item.aqi != null)
           .map((item) => ({ ...item, intensity: Math.min(item.aqi / 300, 1) }));
-        if (!formatted || formatted.length === 0) {
-          formatted = getDemoHeatmap();
-        }
         setPoints(formatted);
         setLoading(false);
       } catch (e) {

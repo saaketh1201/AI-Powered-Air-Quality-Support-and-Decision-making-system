@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AQICategory from "./AQICategory";
-import { getRanking } from "./services/api";
+import api from "./services/api";
 
 function getAQIColor(aqi) {
   if (!aqi) return "var(--color-text-muted)";
@@ -20,10 +20,10 @@ export default function TopCities({ onCitySelect }) {
     let active = true;
     const loadRanking = async () => {
       try {
-        const data = await getRanking();
+        const res = await api.get("/aqi-ranking");
         if (!active) return;
-        const list = Array.isArray(data) ? data : [];
-        setSorted([...list].sort((a, b) => (Number(b.aqi) || 0) - (Number(a.aqi) || 0)));
+        const data = Array.isArray(res?.data) ? res.data : [];
+        setSorted([...data].sort((a, b) => (Number(b.aqi) || 0) - (Number(a.aqi) || 0)));
         setLoading(false);
       } catch (e) {
         if (active) {

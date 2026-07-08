@@ -275,16 +275,7 @@ export default function AQIDashboard({ city, onCityChange }) {
         }
       })
       .catch((err) => {
-            const serverMsg = err?.response?.data?.error || err?.response?.data || err?.message || '';
-            // Sanitize long internal errors (eg. nominatim timeouts) into friendly notice
-            const lower = (serverMsg || '').toLowerCase();
-            let friendly = "Failed to fetch data for this location.";
-            if (lower.includes('nominatim') || lower.includes('timeout') || lower.length > 180) {
-              friendly = "Location lookup failed (geocoding service unreachable). Try another city or use the demo.";
-            } else if (serverMsg) {
-              friendly = serverMsg;
-            }
-            setError(friendly);
+        setError(err?.response?.data?.error || "Failed to fetch data for this location.");
         setLoading(false);
       });
   }, [city]);
