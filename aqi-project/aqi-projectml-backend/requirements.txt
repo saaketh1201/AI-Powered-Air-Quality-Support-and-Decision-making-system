@@ -11,3 +11,4 @@ Flask-Compress
 pytest
 requests-mock
 gunicorn==23.0.0
+cachetools
