@@ -416,19 +416,20 @@ function LocalityCard({ locality, rank, variant }) {
         <div className="nearby-locality-info">
           <div className="nearby-locality-heading" style={{ alignItems: 'center' }}>
             <span className="nearby-locality-icon">{getLocalityIcon(locality)}</span>
-            <div style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0 }}>
-              <span
-                className="nearby-locality-name"
-                title={`${locality.name}${subtitle ? ' · ' + subtitle : ''}`}
-                style={{ display: 'inline-block', marginRight: '0.6rem' }}
-              >
-                {locality.name}
-              </span>
-              {subtitle && (
-                <span className="nearby-locality-subtitle" style={{ display: 'inline-block', color: 'var(--color-text-muted)' }}>
-                  {subtitle}
-                </span>
-              )}
+            <div style={{ minWidth: 0 }}>
+              {(() => {
+                const combined = `${subtitle ? subtitle + ' · ' : ''}${locality.name}`;
+                return (
+                  <span
+                    className="nearby-locality-compact"
+                    title={combined}
+                    aria-label={combined}
+                  >
+                    <span className="nearby-locality-compact-desc">{subtitle ? subtitle + ' · ' : ''}</span>
+                    <span className="nearby-locality-compact-name">{locality.name}</span>
+                  </span>
+                );
+              })()}
             </div>
           </div>
           <div className="nearby-locality-summary">{summary}</div>

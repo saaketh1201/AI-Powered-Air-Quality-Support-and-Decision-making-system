@@ -754,6 +754,25 @@ body {
   max-width: 320px;
 }
 
+/* Compact single-line locality header (description + name) */
+.nearby-locality-compact {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.nearby-locality-compact-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.nearby-locality-compact-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-left: 0.45rem;
+}
+
 .nearby-locality-summary {
   font-size: 0.78rem;
   color: var(--color-text-secondary);
