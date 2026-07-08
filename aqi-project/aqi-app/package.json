@@ -29,8 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
-  "eslintConfig": {
+"proxy": "https://aqi-backend-74f1.onrender.com",  "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
