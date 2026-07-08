@@ -9,7 +9,9 @@ import { Line } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 export default function AQIChart({ forecast, label = "PM2.5 (µg/m³)", isHistory = false }) {
-  if (!forecast || forecast.length === 0) {
+  const safeForecast = Array.isArray(forecast) ? forecast : [];
+
+  if (safeForecast.length === 0) {
     return (
       <div style={{
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -25,7 +27,7 @@ export default function AQIChart({ forecast, label = "PM2.5 (µg/m³)", isHistor
   }
 
   const maxPoints = isHistory ? 60 : 48;
-  const slice = forecast.slice(-maxPoints);
+  const slice = safeForecast.slice(-maxPoints);
 
   const labels = slice.map((f) => {
     const date = typeof f.ds === "number" ? new Date(f.ds * 1000) : new Date(f.ds);

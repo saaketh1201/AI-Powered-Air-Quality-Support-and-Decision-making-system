@@ -38,7 +38,7 @@ export default function Navbar({ city, view, onGoHome, onNavigate, onSearch, sea
       try {
         const results = await getCitySuggestions(localSearch, 6);
         if (!cancelled) {
-          setSuggestions(results);
+          setSuggestions(Array.isArray(results) ? results : []);
           setActiveSuggestion(-1);
         }
       } catch (e) {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import AQICategory from "./AQICategory";
+import api from "./services/api";
 import SkeletonCard from "./SkeletonCard";
 import DownloadReport from "./DownloadReport";
 import DownloadComparisonReport from "./DownloadComparisonReport";
@@ -107,7 +107,7 @@ function CityCard({ cityData, color }) {
       {cityData.composition && (
         <div>
           <div className="eyebrow" style={{ marginBottom: "0.875rem" }}>Pollutant readings</div>
-          {Object.entries(cityData.composition)
+          {Object.entries(cityData.composition || {})
             .filter(([k, v]) => v != null && POLLUTANT_LABELS[k])
             .sort(([, a], [, b]) => b - a)
             .map(([key, val]) => (
@@ -139,7 +139,7 @@ export default function CompareCities() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleCompare = () => {
+  const handleCompare = async () => {
     if (!city1.trim() || !city2.trim()) {
       setError("Enter both city names to compare.");
       return;
@@ -147,10 +147,14 @@ export default function CompareCities() {
     setError("");
     setLoading(true);
     setData(null);
-    axios
-      .get(`/compare?city1=${encodeURIComponent(city1)}&city2=${encodeURIComponent(city2)}`)
-      .then((res) => { setData(res.data); setLoading(false); })
-      .catch(() => { setError("Comparison failed. Please try again."); setLoading(false); });
+    try {
+      const res = await api.get(`/compare?city1=${encodeURIComponent(city1)}&city2=${encodeURIComponent(city2)}`);
+      setData(res?.data || null);
+    } catch (e) {
+      setError("Comparison failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const color1 = "#00C2B8";

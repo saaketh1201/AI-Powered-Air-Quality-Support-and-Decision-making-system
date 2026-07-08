@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import AQICategory from "./AQICategory";
+import api from "./services/api";
 
 function getAQIColor(aqi) {
   if (!aqi) return "var(--color-text-muted)";
@@ -17,13 +17,26 @@ export default function TopCities({ onCitySelect }) {
   const [sorted, setSorted] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/aqi-ranking")
-      .then((res) => {
-        setSorted([...(res.data || [])].sort((a, b) => b.aqi - a.aqi));
+    let active = true;
+    const loadRanking = async () => {
+      try {
+        const res = await api.get("/aqi-ranking");
+        if (!active) return;
+        const data = Array.isArray(res?.data) ? res.data : [];
+        setSorted([...data].sort((a, b) => (Number(b.aqi) || 0) - (Number(a.aqi) || 0)));
         setLoading(false);
-      })
-      .catch(() => setLoading(false));
+      } catch (e) {
+        if (active) {
+          setSorted([]);
+          setLoading(false);
+        }
+      }
+    };
+
+    loadRanking();
+    return () => {
+      active = false;
+    };
   }, []);
 
   return (

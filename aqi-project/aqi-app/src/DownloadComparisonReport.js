@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "./services/api";
 
 export default function DownloadComparisonReport({ city1, city2 }) {
   const [loading, setLoading] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { createAerisReport, exportReportCsv } from "./reportUtils";
+import api from "./services/api";
 
 export default function DownloadReport({ city, reportData, buttonLabel = "Download Report", csvLabel = "Export CSV" }) {
   const [loading, setLoading] = useState(false);

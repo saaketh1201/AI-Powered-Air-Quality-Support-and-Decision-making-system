@@ -15,7 +15,9 @@ const COLORS = [
 ];
 
 export default function CompositionChart({ composition }) {
-  if (!composition || Object.keys(composition).length === 0) {
+  const safeComposition = composition && typeof composition === "object" && !Array.isArray(composition) ? composition : {};
+
+  if (!Object.keys(safeComposition).length) {
     return (
       <div style={{
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -30,7 +32,7 @@ export default function CompositionChart({ composition }) {
     );
   }
 
-  const entries = Object.entries(composition).filter(([, v]) => v != null && v > 0);
+  const entries = Object.entries(safeComposition).filter(([, v]) => v != null && v > 0);
   const labels  = entries.map(([k]) => POLLUTANT_LABELS[k] || k.toUpperCase());
   const values  = entries.map(([, v]) => Number(v).toFixed(2));
   const colors  = entries.map((_, i) => COLORS[i % COLORS.length]);

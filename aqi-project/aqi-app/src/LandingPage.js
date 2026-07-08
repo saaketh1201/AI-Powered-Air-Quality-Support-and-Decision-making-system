@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
-import { getCitySuggestions } from "./services/api";
+import { getCitySuggestions, getRanking } from "./services/api";
 
 const FEATURED_CITIES = [
   "Delhi", "Jakarta", "Beijing", "Hyderabad", "Santiago",
@@ -104,18 +103,26 @@ export default function LandingPage({ onSearch, theme, toggleTheme }) {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    axios
-      .get("/aqi-ranking")
-      .then((res) => {
-        setRankingData(res.data || []);
-        setRankingLoading(false);
-      })
-      .catch(() => {
-        // If the backend is not running (dev) or the request fails,
-        // fall back to a small sample so the UI remains informative.
-        setRankingData(SAMPLE_RANKING);
-        setRankingLoading(false);
-      });
+    let active = true;
+    const loadRanking = async () => {
+      try {
+        const data = await getRanking();
+        if (active) {
+          setRankingData(Array.isArray(data) ? data : []);
+          setRankingLoading(false);
+        }
+      } catch (e) {
+        if (active) {
+          setRankingData(SAMPLE_RANKING);
+          setRankingLoading(false);
+        }
+      }
+    };
+
+    loadRanking();
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -130,7 +137,7 @@ export default function LandingPage({ onSearch, theme, toggleTheme }) {
       try {
         const results = await getCitySuggestions(query, 6);
         if (!cancelled) {
-          setSuggestions(results);
+          setSuggestions(Array.isArray(results) ? results : []);
           setActiveSuggestion(-1);
         }
       } catch (e) {

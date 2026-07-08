@@ -318,16 +318,18 @@ export default function AQIDashboard({ city, onCityChange }) {
 
   if (!data) return null;
 
-  const aqi = data.aqi;
-  const composition = data.composition || {};
-  const analytics = data.analytics || {};
-  const narrative = analytics.narrative || {};
-  const risk = analytics.risk || {};
-  const aiSummary = analytics.summary || "Air quality conditions are being monitored in real time.";
-  const kpis = analytics.kpis || {};
-  const freshnessLabel = data.source === "IQAir AirVisual API" ? "IQAir" : data.source || "Live data";
-  const freshnessAge = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "just now";
-  const averageAqi = history.length > 0 ? Math.round(history.reduce((sum, item) => sum + (item.y || 0), 0) / history.length) : aqi;
+  const aqi = Number(data?.aqi) || 0;
+  const composition = data?.composition && typeof data.composition === 'object' && !Array.isArray(data.composition) ? data.composition : {};
+  const analytics = data?.analytics && typeof data.analytics === 'object' && !Array.isArray(data.analytics) ? data.analytics : {};
+  const narrative = analytics?.narrative && typeof analytics.narrative === 'object' && !Array.isArray(analytics.narrative) ? analytics.narrative : {};
+  const risk = analytics?.risk && typeof analytics.risk === 'object' && !Array.isArray(analytics.risk) ? analytics.risk : {};
+  const aiSummary = analytics?.summary || "Air quality conditions are being monitored in real time.";
+  const kpis = analytics?.kpis && typeof analytics.kpis === 'object' && !Array.isArray(analytics.kpis) ? analytics.kpis : {};
+  const freshnessLabel = data?.source === "IQAir AirVisual API" ? "IQAir" : data?.source || "Live data";
+  const freshnessAge = data?.updatedAt ? new Date(data.updatedAt).toLocaleString() : "just now";
+  const safeHistory = Array.isArray(history) ? history : [];
+  const safeForecast = Array.isArray(data?.forecast) ? data.forecast : [];
+  const averageAqi = safeHistory.length > 0 ? Math.round(safeHistory.reduce((sum, item) => sum + (Number(item?.y) || 0), 0) / safeHistory.length) : aqi;
 
   const reportData = {
     city: data.city,
@@ -345,7 +347,7 @@ export default function AQIDashboard({ city, onCityChange }) {
     healthRecommendation: narrative.prescriptive || analytics?.prescriptive || "Follow standard precautions.",
     decisionSupport: aiSummary,
     weatherSummary: data.weather ? `Humidity ${data.weather.humidity ?? "—"}% · Wind ${data.weather.wind_speed ?? "—"} km/h` : risk.weather || "Weather summary unavailable",
-    forecastSummary: data.forecast?.length ? `Next 48 hours forecast range ${Math.min(...data.forecast.map((p) => p.y || 0))}–${Math.max(...data.forecast.map((p) => p.y || 0))} µg/m³` : "Forecast summary unavailable",
+    forecastSummary: safeForecast.length ? `Next 48 hours forecast range ${Math.min(...safeForecast.map((p) => Number(p?.y) || 0))}–${Math.max(...safeForecast.map((p) => Number(p?.y) || 0))} µg/m³` : "Forecast summary unavailable",
     cleanestAreas,
     pollutedAreas,
   };
@@ -611,7 +613,7 @@ export default function AQIDashboard({ city, onCityChange }) {
           {/* Pollutant quick list */}
           <div className="aeris-card animate-slide-up" style={{ padding: "1.5rem 1.75rem" }}>
             <div className="eyebrow" style={{ marginBottom: "1rem" }}>Pollutant readings</div>
-            {Object.entries(composition)
+            {Object.entries(composition || {})
               .filter(([key, val]) => val != null && POLLUTANT_META[key])
               .map(([key, val]) => (
                 <PollutantRow key={key} pollutant={key} value={val} />
@@ -697,7 +699,7 @@ export default function AQIDashboard({ city, onCityChange }) {
 
             <div className="aeris-card" style={{ padding: "1.75rem" }}>
               <div className="eyebrow" style={{ marginBottom: "1rem" }}>Detailed readings</div>
-              {Object.entries(composition)
+              {Object.entries(composition || {})
                 .filter(([key, val]) => val != null && POLLUTANT_META[key])
                 .sort(([, a], [, b]) => b - a)
                 .map(([key, val]) => (

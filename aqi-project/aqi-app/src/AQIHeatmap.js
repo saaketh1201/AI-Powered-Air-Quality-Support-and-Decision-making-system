@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import axios from "axios";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
+import api from "./services/api";
 
 function getAQIColor(aqi) {
   if (aqi <= 50)  return "#22C55E";
@@ -70,20 +70,34 @@ export default function AQIHeatmap({ fullscreen = false }) {
   const [showMarkers, setShowMarkers] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("/aqi-heatmap")
-      .then((res) => {
-        const formatted = (res.data || [])
-          .filter((item) => item.aqi != null)
+    let active = true;
+    const loadPoints = async () => {
+      try {
+        const res = await api.get("/aqi-heatmap");
+        if (!active) return;
+        const payload = Array.isArray(res?.data) ? res.data : [];
+        const formatted = payload
+          .filter((item) => item && item.aqi != null)
           .map((item) => ({ ...item, intensity: Math.min(item.aqi / 300, 1) }));
         setPoints(formatted);
         setLoading(false);
-      })
-      .catch(() => setLoading(false));
+      } catch (e) {
+        if (active) {
+          setPoints([]);
+          setLoading(false);
+        }
+      }
+    };
+
+    loadPoints();
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const worst  = points.reduce((a, b) => (!a || b.aqi > a.aqi ? b : a), null);
-  const avgAqi = points.length ? Math.round(points.reduce((s, p) => s + p.aqi, 0) / points.length) : null;
+  const safePoints = Array.isArray(points) ? points : [];
+  const worst  = safePoints.reduce((a, b) => (!a || b.aqi > a.aqi ? b : a), null);
+  const avgAqi = safePoints.length ? Math.round(safePoints.reduce((s, p) => s + (Number(p.aqi) || 0), 0) / safePoints.length) : null;
   const mapH   = fullscreen ? "640px" : "520px";
 
   return (
@@ -130,7 +144,7 @@ export default function AQIHeatmap({ fullscreen = false }) {
           ))}
           <div style={{ display: "flex", alignItems: "center", gap: "0.375rem", fontSize: "0.8125rem", color: "var(--color-text-muted)" }}>
             <span className="live-dot" style={{ width: "6px", height: "6px" }} />
-            {loading ? "Loading…" : `${points.length} stations`}
+            {loading ? "Loading…" : `${safePoints.length} stations`}
           </div>
         </div>
       </div>
@@ -155,9 +169,9 @@ export default function AQIHeatmap({ fullscreen = false }) {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             />
 
-            {showHeat && points.length > 0 && (
+            {showHeat && safePoints.length > 0 && (
               <HeatmapLayer
-                points={points}
+                points={safePoints}
                 longitudeExtractor={(m) => m.lon}
                 latitudeExtractor={(m) => m.lat}
                 intensityExtractor={(m) => m.intensity}
@@ -175,7 +189,7 @@ export default function AQIHeatmap({ fullscreen = false }) {
               />
             )}
 
-            {showMarkers && points.map((city, i) => (
+            {showMarkers && safePoints.map((city, i) => (
               <Marker key={i} position={[city.lat, city.lon]} icon={makeAQIIcon(city.aqi)}>
                 <Popup>
                   <div style={{ fontFamily: "var(--font-body)", minWidth: "150px", padding: "0.25rem" }}>

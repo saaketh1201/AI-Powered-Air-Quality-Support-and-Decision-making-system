@@ -5,6 +5,7 @@ const api = axios.create({
     process.env.REACT_APP_API_URL ||
     "https://aqi-backend-74f1.onrender.com",
 });
+
 const CACHE = new Map();
 const IN_FLIGHT = new Map();
 const SEARCH_CACHE = new Map();
@@ -13,6 +14,14 @@ const TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 function _cacheKey(city) {
   return `city:${(city || '').toString().trim().toLowerCase()}`;
+}
+
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function asObject(value) {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
 }
 
 export async function getCityData(city, options = {}) {
@@ -30,7 +39,7 @@ export async function getCityData(city, options = {}) {
   const compact = options.compact === true;
   const url = `/aqi/${encodeURIComponent(city)}${compact ? '?compact=true' : ''}`;
   const promise = api.get(url).then((res) => {
-    const payload = res.data;
+    const payload = asObject(res?.data);
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
     return payload;
@@ -60,12 +69,9 @@ export async function getCitySuggestions(prefix, limit = 6) {
     return SEARCH_IN_FLIGHT.get(key);
   }
 
-  const promise = axios
-    .get(`/search-cities?q=${encodeURIComponent(prefix.trim())}&limit=${limit}`)
+  const promise = api.get(`/search-cities?q=${encodeURIComponent(prefix.trim())}&limit=${limit}`)
     .then((res) => {
-      const payload = Array.isArray(res.data)
-  ? res.data
-  : (res.data?.cities || res.data?.results || res.data?.data || []);
+      const payload = asArray(res?.data?.cities || res?.data?.results || res?.data?.data || res?.data);
       SEARCH_CACHE.set(key, { _ts: Date.now(), payload });
       SEARCH_IN_FLIGHT.delete(key);
       return payload;
@@ -89,7 +95,7 @@ export async function getNearby(lat, lon, radius = 50) {
   if (IN_FLIGHT.has(key)) return IN_FLIGHT.get(key);
 
   const promise = api.get(`/nearby?lat=${lat}&lon=${lon}&radius=${radius}`).then((res) => {
-    const payload = res.data;
+    const payload = asObject(res?.data);
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
     return payload;
@@ -103,14 +109,14 @@ export async function getNearby(lat, lon, radius = 50) {
 }
 
 export async function getRanking() {
-  const key = `ranking`;
+  const key = 'ranking';
   const now = Date.now();
   const cached = CACHE.get(key);
   if (cached && (now - cached._ts) < TTL_MS) return cached.payload;
   if (IN_FLIGHT.has(key)) return IN_FLIGHT.get(key);
 
   const promise = api.get('/aqi-ranking').then((res) => {
-    const payload = res.data;
+    const payload = asArray(res?.data);
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
     return payload;
@@ -119,3 +125,5 @@ export async function getRanking() {
   IN_FLIGHT.set(key, promise);
   return promise;
 }
+
+export default api;
