@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getDemoRanking } from '../hyderabadFallback';
 
 const api = axios.create({
   baseURL:
@@ -117,6 +118,13 @@ export async function getRanking() {
 
   const promise = api.get('/aqi-ranking').then((res) => {
     const payload = asArray(res?.data);
+    // If backend returned an empty ranking, provide a demo ranking so UI stays informative
+    if (!payload || payload.length === 0) {
+      const demo = getDemoRanking();
+      CACHE.set(key, { _ts: Date.now(), payload: demo });
+      IN_FLIGHT.delete(key);
+      return demo;
+    }
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
     return payload;

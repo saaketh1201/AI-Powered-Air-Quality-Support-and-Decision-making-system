@@ -296,3 +296,35 @@ export function getDemoFallback(cityName = 'hyderabad', fromLat, fromLon, radius
     .filter((loc) => loc.distance_km <= radiusKm)
     .sort((a, b) => a.aqi - b.aqi);
 }
+
+/**
+ * Generate a simple demo ranking of cities using the demo centers.
+ * Returns an array of { name, lat, lon, aqi } sorted by aqi desc so TopCities can display.
+ */
+export function getDemoRanking() {
+  // compute a baseline from RAW_LOCALITIES average AQI
+  const avg = Math.round(RAW_LOCALITIES.reduce((s, r) => s + (Number(r.aqi) || 0), 0) / RAW_LOCALITIES.length);
+  // create entries with slight variations
+  const entries = Object.keys(CITY_CENTERS).map((k, i) => ({
+    name: k.charAt(0).toUpperCase() + k.slice(1),
+    lat: CITY_CENTERS[k].lat,
+    lon: CITY_CENTERS[k].lon,
+    aqi: Math.max(20, Math.min(500, avg + (i % 3 === 0 ? 30 : i % 3 === 1 ? -10 : 5) * (i + 1))),
+  }));
+  // sort descending (most polluted first)
+  return entries.sort((a, b) => (Number(b.aqi) || 0) - (Number(a.aqi) || 0));
+}
+
+/**
+ * Return heatmap-like points for demo visualization based on demo ranking.
+ */
+export function getDemoHeatmap() {
+  const ranking = getDemoRanking();
+  return ranking.map((c, i) => ({
+    city: c.name,
+    lat: c.lat,
+    lon: c.lon,
+    aqi: c.aqi,
+    intensity: Math.min((c.aqi || 0) / 300, 1),
+  }));
+}
