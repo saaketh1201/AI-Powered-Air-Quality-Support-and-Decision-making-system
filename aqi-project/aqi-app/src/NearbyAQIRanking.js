@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { getNearby } from "./services/api";
-import { getDemoFallback, HYD_CENTER, CITY_CENTERS } from "./hyderabadFallback";
+import { getDemoFallback, HYD_CENTER } from "./hyderabadFallback";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // AQI helpers (pure — no hardcoded city data)
@@ -279,19 +279,11 @@ function useNearbyAQI(propLat, propLon, propCity) {
     fetchNearbyData(lat, lon);
   }, [fetchNearbyData]);
 
-  const loadDemoCity = useCallback((cityKey) => {
-    const center = CITY_CENTERS[cityKey] || HYD_CENTER;
-    setDemoCity(cityKey);
-    setUserCoords({ lat: center.lat, lon: center.lon });
-    setPermissionState("granted");
-    fetchNearbyData(center.lat, center.lon);
-  }, [fetchNearbyData]);
 
   return {
     permissionState, userCoords, localities, centerCity,
     loading, usingFallback, dataSource, error,
     requestLocation, loadHyderabadDemo, fetchNearbyData,
-    loadDemoCity,
   };
 }
 

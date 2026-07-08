@@ -275,7 +275,7 @@ export default function AQIDashboard({ city, onCityChange }) {
         }
       })
       .catch((err) => {
-            const serverMsg = err?.response?.data?.error || err?.message || '';
+            const serverMsg = err?.response?.data?.error || err?.response?.data || err?.message || '';
             // Sanitize long internal errors (eg. nominatim timeouts) into friendly notice
             const lower = (serverMsg || '').toLowerCase();
             let friendly = "Failed to fetch data for this location.";
