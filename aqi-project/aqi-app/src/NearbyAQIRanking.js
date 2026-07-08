@@ -554,7 +554,6 @@ export default function NearbyAQIRanking({ lat: propLat, lon: propLon, city: pro
     permissionState, localities, centerCity,
     loading, usingFallback, dataSource, error,
     requestLocation, loadHyderabadDemo,
-    loadDemoCity,
   } = useNearbyAQI(propLat, propLon, propCity);
 
   // Derive cleanest / most polluted lists from sorted localities
