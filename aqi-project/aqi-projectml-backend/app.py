@@ -1340,6 +1340,12 @@ def _fetch_locality_aqi(locality, origin_lat, origin_lon):
         if not land_use_icon and locality.get("landUseIcon"):
             land_use_icon = locality.get("landUseIcon")
 
+        # Defensive extraction of note: analytics_narrative may be dict or object
+        if isinstance(analytics_narrative, dict):
+            note_text = analytics_narrative.get("context") or locality.get("note") or analytics_narrative.get("diagnostic")
+        else:
+            note_text = getattr(analytics_narrative, "context", None) or locality.get("note") or getattr(analytics_narrative, "diagnostic", None)
+
         return {
             "name": name,
             "lat": lat,
@@ -1354,7 +1360,7 @@ def _fetch_locality_aqi(locality, origin_lat, origin_lon):
             "source": source_name,
             "landUseTag": " & ".join(land_use_tags) if land_use_tags else None,
             "landUseIcon": land_use_icon,
-            "note": analytics_narrative.context or locality.get("note") or analytics_narrative.diagnostic,
+            "note": note_text,
             # Location-aware analytics with industrial/traffic/water body context
             "analytics": {
                 "narrative": analytics_narrative,
