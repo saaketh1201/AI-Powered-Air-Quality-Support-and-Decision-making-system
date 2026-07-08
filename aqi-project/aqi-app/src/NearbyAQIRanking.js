@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { getNearby } from "./services/api";
-import { getHyderabadFallback, getDemoFallback, HYD_CENTER, CITY_CENTERS } from "./hyderabadFallback";
+import { getDemoFallback, HYD_CENTER, CITY_CENTERS } from "./hyderabadFallback";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // AQI helpers (pure — no hardcoded city data)

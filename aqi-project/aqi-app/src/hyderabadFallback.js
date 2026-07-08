@@ -275,16 +275,24 @@ export const CITY_CENTERS = {
 export function getDemoFallback(cityName = 'hyderabad', fromLat, fromLon, radiusKm = 60) {
   const key = (cityName || '').toString().trim().toLowerCase();
   const center = CITY_CENTERS[key] || (fromLat != null && fromLon != null ? { lat: fromLat, lon: fromLon } : HYD_CENTER);
-
-  // For demo, reuse RAW_LOCALITIES but compute distances from the selected city center.
+  // For demo, reposition localities by applying the same offset from HYD_CENTER
+  // so that the neighbourhood layout appears around the selected city center.
   return RAW_LOCALITIES
-    .map((loc) => ({
-      ...loc,
-      // Keep original lat/lon but distance measured from demo city centre — good enough for UI demo
-      distance_km: Math.round(haversineKm(center.lat, center.lon, loc.lat, loc.lon) * 10) / 10,
-      // Prefix note to indicate demo city when applicable
-      note: loc.note ? `${loc.note}` : '',
-    }))
+    .map((loc) => {
+      const latOffset = loc.lat - HYD_CENTER.lat;
+      const lonOffset = loc.lon - HYD_CENTER.lon;
+      const newLat = Math.round((center.lat + latOffset) * 1e6) / 1e6;
+      const newLon = Math.round((center.lon + lonOffset) * 1e6) / 1e6;
+      const distance_km = Math.round(haversineKm(center.lat, center.lon, newLat, newLon) * 10) / 10;
+
+      return {
+        ...loc,
+        lat: newLat,
+        lon: newLon,
+        distance_km,
+        note: loc.note ? `${loc.note}` : '',
+      };
+    })
     .filter((loc) => loc.distance_km <= radiusKm)
     .sort((a, b) => a.aqi - b.aqi);
 }
