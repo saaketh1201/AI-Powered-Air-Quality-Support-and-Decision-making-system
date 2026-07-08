@@ -10209,15 +10209,15 @@
       "humidity": 96,
       "wind_speed": 5.6
     },
-    "updatedAt": "2026-07-08T14:34:04.939727"
+    "updatedAt": "2026-07-08T15:00:24.103263"
   },
   "nearby:28.64:77.22:50": {
     "localities": [
       {
-        "name": "Pitampura",
-        "lat": 28.7017,
-        "lon": 77.1325,
-        "distance_km": 10.4,
+        "name": "Karol Bagh",
+        "lat": 28.6506,
+        "lon": 77.1887,
+        "distance_km": 2.8,
         "aqi": 120,
         "composition": {
           "pm2_5": 43.3,
@@ -10225,7 +10225,7 @@
           "no2": 51.4,
           "so2": 27.0,
           "o3": 55.0,
-          "co": 776.0,
+          "co": 656.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10235,14 +10235,14 @@
         "source": "Open-Meteo Air Quality API",
         "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
         "landUseIcon": "🌊",
-        "note": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
+        "note": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 776.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 656.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
-            "context": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
+            "context": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
           },
           "risk": {
             "score": 36,
@@ -10259,128 +10259,14 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Pitampura is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 776.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Karol Bagh is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 656.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 120,
             "average_ers": 36,
-            "cleanest_city": "Pitampura",
-            "most_polluted_city": "Pitampura",
+            "cleanest_city": "Karol Bagh",
+            "most_polluted_city": "Karol Bagh",
             "trend": "Stable",
-            "highest_risk_region": "Pitampura"
-          }
-        }
-      },
-      {
-        "name": "Anand Vihar",
-        "lat": 28.6519,
-        "lon": 77.3159,
-        "distance_km": 9.7,
-        "aqi": 120,
-        "composition": {
-          "pm2_5": 43.3,
-          "pm10": 43.8,
-          "no2": 51.4,
-          "so2": 27.0,
-          "o3": 55.0,
-          "co": 761.0,
-          "nh3": null
-        },
-        "category": "Unhealthy for Sensitive Groups",
-        "dominant": "PM2.5",
-        "dominant_key": "pm2_5",
-        "trend": "Stable",
-        "source": "Open-Meteo Air Quality API",
-        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
-        "landUseIcon": "🌊",
-        "note": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
-        "analytics": {
-          "narrative": {
-            "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 761.0 µg/m³).",
-            "predictive": "Insufficient data for a reliable trend projection.",
-            "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
-            "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
-          },
-          "risk": {
-            "score": 35,
-            "level": "Moderate",
-            "dominant_pollutant": {
-              "key": "pm2_5",
-              "label": "PM2.5",
-              "value": 43.3,
-              "unit": "µg/m³"
-            },
-            "weather": "Moderate wind and temperature inversions are amplifying local accumulation.",
-            "trend": "Trend data is limited",
-            "confidence": 72,
-            "source": "Open-Meteo Air Quality API",
-            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
-          },
-          "summary": "Air quality in Anand Vihar is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 35/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 761.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
-          "kpis": {
-            "average_aqi": 120,
-            "average_ers": 35,
-            "cleanest_city": "Anand Vihar",
-            "most_polluted_city": "Anand Vihar",
-            "trend": "Stable",
-            "highest_risk_region": "Anand Vihar"
-          }
-        }
-      },
-      {
-        "name": "Rohini",
-        "lat": 28.7237,
-        "lon": 77.0999,
-        "distance_km": 14.4,
-        "aqi": 120,
-        "composition": {
-          "pm2_5": 43.3,
-          "pm10": 43.8,
-          "no2": 51.4,
-          "so2": 27.0,
-          "o3": 55.0,
-          "co": 776.0,
-          "nh3": null
-        },
-        "category": "Unhealthy for Sensitive Groups",
-        "dominant": "PM2.5",
-        "dominant_key": "pm2_5",
-        "trend": "Stable",
-        "source": "Open-Meteo Air Quality API",
-        "landUseTag": "Industrial Zone & Traffic Corridor",
-        "landUseIcon": "🏭",
-        "note": "Location analysis indicates industrial zone(s) such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
-        "analytics": {
-          "narrative": {
-            "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 776.0 µg/m³).",
-            "predictive": "Insufficient data for a reliable trend projection.",
-            "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
-            "context": "Location analysis indicates industrial zone(s) such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
-          },
-          "risk": {
-            "score": 36,
-            "level": "Moderate",
-            "dominant_pollutant": {
-              "key": "pm2_5",
-              "label": "PM2.5",
-              "value": 43.3,
-              "unit": "µg/m³"
-            },
-            "weather": "Moderate wind and temperature inversions are amplifying local accumulation.",
-            "trend": "Trend data is limited",
-            "confidence": 72,
-            "source": "Open-Meteo Air Quality API",
-            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
-          },
-          "summary": "Air quality in Rohini is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 776.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
-          "kpis": {
-            "average_aqi": 120,
-            "average_ers": 36,
-            "cleanest_city": "Rohini",
-            "most_polluted_city": "Rohini",
-            "trend": "Stable",
-            "highest_risk_region": "Rohini"
+            "highest_risk_region": "Karol Bagh"
           }
         }
       },
@@ -10396,7 +10282,7 @@
           "no2": 51.4,
           "so2": 27.0,
           "o3": 55.0,
-          "co": 994.0,
+          "co": 890.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10410,7 +10296,7 @@
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 994.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 890.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
             "context": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Okhla Industrial Estate (10.2 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
@@ -10430,7 +10316,7 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Central Delhi is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 994.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Okhla Industrial Estate (10.2 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Central Delhi is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 890.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Okhla Industrial Estate (10.2 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 120,
             "average_ers": 36,
@@ -10453,7 +10339,7 @@
           "no2": 51.4,
           "so2": 27.0,
           "o3": 55.0,
-          "co": 994.0,
+          "co": 890.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10467,7 +10353,7 @@
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 994.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 890.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
             "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Wazirpur Industrial Estate (10.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
@@ -10487,7 +10373,7 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Connaught Place is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 994.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Wazirpur Industrial Estate (10.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Connaught Place is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 890.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Wazirpur Industrial Estate (10.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 120,
             "average_ers": 36,
@@ -10499,10 +10385,10 @@
         }
       },
       {
-        "name": "Karol Bagh",
-        "lat": 28.6506,
-        "lon": 77.1887,
-        "distance_km": 2.8,
+        "name": "Anand Vihar",
+        "lat": 28.6519,
+        "lon": 77.3159,
+        "distance_km": 9.7,
         "aqi": 120,
         "composition": {
           "pm2_5": 43.3,
@@ -10510,7 +10396,7 @@
           "no2": 51.4,
           "so2": 27.0,
           "o3": 55.0,
-          "co": 779.0,
+          "co": 512.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10520,14 +10406,71 @@
         "source": "Open-Meteo Air Quality API",
         "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
         "landUseIcon": "🌊",
-        "note": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
+        "note": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 779.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 512.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
-            "context": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
+            "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
+          },
+          "risk": {
+            "score": 35,
+            "level": "Moderate",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 43.3,
+              "unit": "µg/m³"
+            },
+            "weather": "Moderate wind and temperature inversions are amplifying local accumulation.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Anand Vihar is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 35/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 512.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Jhilmil Industrial Area (12.7 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "kpis": {
+            "average_aqi": 120,
+            "average_ers": 35,
+            "cleanest_city": "Anand Vihar",
+            "most_polluted_city": "Anand Vihar",
+            "trend": "Stable",
+            "highest_risk_region": "Anand Vihar"
+          }
+        }
+      },
+      {
+        "name": "Pitampura",
+        "lat": 28.7017,
+        "lon": 77.1325,
+        "distance_km": 10.4,
+        "aqi": 120,
+        "composition": {
+          "pm2_5": 43.3,
+          "pm10": 43.8,
+          "no2": 51.4,
+          "so2": 27.0,
+          "o3": 55.0,
+          "co": 754.0,
+          "nh3": null
+        },
+        "category": "Unhealthy for Sensitive Groups",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Stable",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
+        "landUseIcon": "🌊",
+        "note": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 754.0 µg/m³).",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
+            "context": "Location analysis indicates industrial zone(s) such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
           },
           "risk": {
             "score": 36,
@@ -10544,30 +10487,30 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Karol Bagh is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 779.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Mundka Industrial Area (8.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Pitampura is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 754.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Wazirpur Industrial Estate, Mundka Industrial Area (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 120,
             "average_ers": 36,
-            "cleanest_city": "Karol Bagh",
-            "most_polluted_city": "Karol Bagh",
+            "cleanest_city": "Pitampura",
+            "most_polluted_city": "Pitampura",
             "trend": "Stable",
-            "highest_risk_region": "Karol Bagh"
+            "highest_risk_region": "Pitampura"
           }
         }
       },
       {
-        "name": "Noida Sector 18",
-        "lat": 28.57,
-        "lon": 77.324,
-        "distance_km": 13.4,
-        "aqi": 146,
+        "name": "Rohini",
+        "lat": 28.7237,
+        "lon": 77.0999,
+        "distance_km": 14.4,
+        "aqi": 120,
         "composition": {
-          "pm2_5": 53.9,
-          "pm10": 54.4,
-          "no2": 66.8,
-          "so2": 33.4,
-          "o3": 53.0,
-          "co": 1017.0,
+          "pm2_5": 43.3,
+          "pm10": 43.8,
+          "no2": 51.4,
+          "so2": 27.0,
+          "o3": 55.0,
+          "co": 754.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10575,24 +10518,24 @@
         "dominant_key": "pm2_5",
         "trend": "Stable",
         "source": "Open-Meteo Air Quality API",
-        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
-        "landUseIcon": "🌊",
-        "note": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
+        "landUseTag": "Industrial Zone & Traffic Corridor",
+        "landUseIcon": "🏭",
+        "note": "Location analysis indicates industrial zone(s) such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
         "analytics": {
           "narrative": {
-            "descriptive": "Current AQI is 146 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 1017.0 µg/m³).",
+            "descriptive": "Current AQI is 120 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 43.3 µg/m³ — more than 3.6× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 51.4 µg/m³, CO: 754.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
-            "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
+            "context": "Location analysis indicates industrial zone(s) such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
           },
           "risk": {
-            "score": 43,
+            "score": 36,
             "level": "Moderate",
             "dominant_pollutant": {
               "key": "pm2_5",
               "label": "PM2.5",
-              "value": 53.9,
+              "value": 43.3,
               "unit": "µg/m³"
             },
             "weather": "Moderate wind and temperature inversions are amplifying local accumulation.",
@@ -10601,14 +10544,14 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Noida Sector 18 is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 43/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 1017.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Rohini is currently 120 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 36/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 754.0 µg/m³ (0.1× guideline) and O₃ at 55.0 µg/m³ (0.4× guideline). Location context indicates nearby industrial areas such as Mundka Industrial Area, Wazirpur Industrial Estate (6.1 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
-            "average_aqi": 146,
-            "average_ers": 43,
-            "cleanest_city": "Noida Sector 18",
-            "most_polluted_city": "Noida Sector 18",
+            "average_aqi": 120,
+            "average_ers": 36,
+            "cleanest_city": "Rohini",
+            "most_polluted_city": "Rohini",
             "trend": "Stable",
-            "highest_risk_region": "Noida Sector 18"
+            "highest_risk_region": "Rohini"
           }
         }
       },
@@ -10624,7 +10567,7 @@
           "no2": 66.8,
           "so2": 33.4,
           "o3": 53.0,
-          "co": 805.0,
+          "co": 924.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10638,7 +10581,7 @@
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 146 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: industrial combustion signature (SO₂: 33.4 µg/m³); proximity to Okhla Industrial Estate (0.6 km away); vehicular emissions (NO₂: 66.8 µg/m³, CO: 805.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: industrial combustion signature (SO₂: 33.4 µg/m³); proximity to Okhla Industrial Estate (0.6 km away); vehicular emissions (NO₂: 66.8 µg/m³, CO: 924.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
             "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (0.6 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
@@ -10658,7 +10601,7 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Nehru Place is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 45/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 805.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (0.6 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Nehru Place is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 45/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 924.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (0.6 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 146,
             "average_ers": 45,
@@ -10681,7 +10624,7 @@
           "no2": 66.8,
           "so2": 33.4,
           "o3": 53.0,
-          "co": 834.0,
+          "co": 723.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10695,7 +10638,7 @@
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 146 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 834.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 723.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
             "context": "Location analysis indicates industrial zone(s) such as Mundka Industrial Area (12.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
@@ -10715,7 +10658,7 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Dwarka is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 41/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 834.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Mundka Industrial Area (12.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Dwarka is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 41/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 723.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Mundka Industrial Area (12.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 146,
             "average_ers": 41,
@@ -10723,6 +10666,63 @@
             "most_polluted_city": "Dwarka",
             "trend": "Stable",
             "highest_risk_region": "Dwarka"
+          }
+        }
+      },
+      {
+        "name": "Noida Sector 18",
+        "lat": 28.57,
+        "lon": 77.324,
+        "distance_km": 13.4,
+        "aqi": 146,
+        "composition": {
+          "pm2_5": 53.9,
+          "pm10": 54.4,
+          "no2": 66.8,
+          "so2": 33.4,
+          "o3": 53.0,
+          "co": 859.0,
+          "nh3": null
+        },
+        "category": "Unhealthy for Sensitive Groups",
+        "dominant": "PM2.5",
+        "dominant_key": "pm2_5",
+        "trend": "Stable",
+        "source": "Open-Meteo Air Quality API",
+        "landUseTag": "Industrial Zone & Traffic Corridor & Water Body",
+        "landUseIcon": "🌊",
+        "note": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources.",
+        "analytics": {
+          "narrative": {
+            "descriptive": "Current AQI is 146 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 859.0 µg/m³).",
+            "predictive": "Insufficient data for a reliable trend projection.",
+            "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
+            "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
+          },
+          "risk": {
+            "score": 41,
+            "level": "Moderate",
+            "dominant_pollutant": {
+              "key": "pm2_5",
+              "label": "PM2.5",
+              "value": 53.9,
+              "unit": "µg/m³"
+            },
+            "weather": "Moderate wind and temperature inversions are amplifying local accumulation.",
+            "trend": "Trend data is limited",
+            "confidence": 72,
+            "source": "Open-Meteo Air Quality API",
+            "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
+          },
+          "summary": "Air quality in Noida Sector 18 is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 41/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 859.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (6.9 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "kpis": {
+            "average_aqi": 146,
+            "average_ers": 41,
+            "cleanest_city": "Noida Sector 18",
+            "most_polluted_city": "Noida Sector 18",
+            "trend": "Stable",
+            "highest_risk_region": "Noida Sector 18"
           }
         }
       },
@@ -10738,7 +10738,7 @@
           "no2": 66.8,
           "so2": 33.4,
           "o3": 53.0,
-          "co": 798.0,
+          "co": 954.0,
           "nh3": null
         },
         "category": "Unhealthy for Sensitive Groups",
@@ -10752,7 +10752,7 @@
         "analytics": {
           "narrative": {
             "descriptive": "Current AQI is 146 (Unhealthy for Sensitive Groups) based on US EPA measurement standards.",
-            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 798.0 µg/m³).",
+            "diagnostic": "PM2.5 is the dominant pollutant, critically elevated at 53.9 µg/m³ — more than 4.5× the safe-exposure threshold. Pollution signature shows: vehicular emissions (NO₂: 66.8 µg/m³, CO: 954.0 µg/m³).",
             "predictive": "Insufficient data for a reliable trend projection.",
             "prescriptive": "Unhealthy for sensitive groups — those with asthma, cardiovascular conditions, children, and the elderly should avoid strenuous outdoor activity. Sensitive individuals should limit outdoor time, especially during peak traffic hours.",
             "context": "Location analysis indicates industrial zone(s) such as Okhla Industrial Estate, Badarpur Power Plant (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central). The fine particulate concentration suggests proximity to combustion sources — likely vehicular traffic, industrial activity, or open burning. Elevated nitrogen dioxide levels are a strong indicator of dense traffic corridors or nearby combustion sources."
@@ -10772,7 +10772,7 @@
             "source": "Open-Meteo Air Quality API",
             "formula": "ERS = 35% AQI + 20% PM2.5 + 10% PM10 + 10% NO₂ + 5% O₃ + 5% Weather + 10% Forecast + Location Factors (Industrial/Traffic/Water)"
           },
-          "summary": "Air quality in Saket is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 41/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 798.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
+          "summary": "Air quality in Saket is currently 146 on the US AQI scale (Unhealthy for Sensitive Groups), driven mainly by elevated PM2.5. The Environmental Risk Score is 41/100 (Moderate) with a Trend data is limited outlook. Main pollutant composition is CO at 954.0 µg/m³ (0.1× guideline) and NO₂ at 66.8 µg/m³ (0.7× guideline). Location context indicates nearby industrial areas such as Okhla Industrial Estate, Badarpur Power Plant (5.3 km away), traffic corridors like NH-44 (North-South), Ring Road (Central).",
           "kpis": {
             "average_aqi": 146,
             "average_ers": 41,
