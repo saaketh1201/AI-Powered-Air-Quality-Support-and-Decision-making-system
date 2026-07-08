@@ -414,11 +414,21 @@ function LocalityCard({ locality, rank, variant }) {
 
         {/* Info */}
         <div className="nearby-locality-info">
-          <div className="nearby-locality-heading">
+          <div className="nearby-locality-heading" style={{ alignItems: 'center' }}>
             <span className="nearby-locality-icon">{getLocalityIcon(locality)}</span>
-            <div>
-              <span className="nearby-locality-name">{locality.name}</span>
-              {subtitle && <div className="nearby-locality-subtitle">{subtitle}</div>}
+            <div style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0 }}>
+              <span
+                className="nearby-locality-name"
+                title={`${locality.name}${subtitle ? ' · ' + subtitle : ''}`}
+                style={{ display: 'inline-block', marginRight: '0.6rem' }}
+              >
+                {locality.name}
+              </span>
+              {subtitle && (
+                <span className="nearby-locality-subtitle" style={{ display: 'inline-block', color: 'var(--color-text-muted)' }}>
+                  {subtitle}
+                </span>
+              )}
             </div>
           </div>
           <div className="nearby-locality-summary">{summary}</div>
