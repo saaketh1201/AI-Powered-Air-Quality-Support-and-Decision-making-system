@@ -261,3 +261,30 @@ export function getHyderabadFallback(fromLat = HYD_CENTER.lat, fromLon = HYD_CEN
 }
 
 export default RAW_LOCALITIES;
+
+// Multi-city demo support: return the same locality templates positioned
+// relative to other city centers for demonstration purposes. This does not
+// claim geographic accuracy — it provides demo data for Mumbai, Delhi, Pune.
+export const CITY_CENTERS = {
+  hyderabad: HYD_CENTER,
+  mumbai: { lat: 19.0760, lon: 72.8777 },
+  delhi: { lat: 28.6139, lon: 77.2090 },
+  pune: { lat: 18.5204, lon: 73.8567 },
+};
+
+export function getDemoFallback(cityName = 'hyderabad', fromLat, fromLon, radiusKm = 60) {
+  const key = (cityName || '').toString().trim().toLowerCase();
+  const center = CITY_CENTERS[key] || (fromLat != null && fromLon != null ? { lat: fromLat, lon: fromLon } : HYD_CENTER);
+
+  // For demo, reuse RAW_LOCALITIES but compute distances from the selected city center.
+  return RAW_LOCALITIES
+    .map((loc) => ({
+      ...loc,
+      // Keep original lat/lon but distance measured from demo city centre — good enough for UI demo
+      distance_km: Math.round(haversineKm(center.lat, center.lon, loc.lat, loc.lon) * 10) / 10,
+      // Prefix note to indicate demo city when applicable
+      note: loc.note ? `${loc.note}` : '',
+    }))
+    .filter((loc) => loc.distance_km <= radiusKm)
+    .sort((a, b) => a.aqi - b.aqi);
+}
