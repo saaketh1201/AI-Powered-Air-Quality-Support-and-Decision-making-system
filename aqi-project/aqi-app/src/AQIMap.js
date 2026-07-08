@@ -7,7 +7,7 @@ function AQIMap() {
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    axios.get("/aqi-ranking").then((res) => setCities(res.data));
+    api.get("/aqi-ranking").then((res) => setCities(res.data));
   }, []);
 
   const getMarkerColor = (aqi) => {

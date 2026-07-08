@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+const api = axios.create({
+  baseURL:
+    process.env.REACT_APP_API_URL ||
+    "https://aqi-backend-74f1.onrender.com",
+});
 const CACHE = new Map();
 const IN_FLIGHT = new Map();
 const SEARCH_CACHE = new Map();
@@ -24,7 +29,7 @@ export async function getCityData(city, options = {}) {
 
   const compact = options.compact === true;
   const url = `/aqi/${encodeURIComponent(city)}${compact ? '?compact=true' : ''}`;
-  const promise = axios.get(url).then((res) => {
+  const promise = api.get(url).then((res) => {
     const payload = res.data;
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
@@ -58,7 +63,9 @@ export async function getCitySuggestions(prefix, limit = 6) {
   const promise = axios
     .get(`/search-cities?q=${encodeURIComponent(prefix.trim())}&limit=${limit}`)
     .then((res) => {
-      const payload = res.data || [];
+      const payload = Array.isArray(res.data)
+  ? res.data
+  : (res.data?.cities || res.data?.results || res.data?.data || []);
       SEARCH_CACHE.set(key, { _ts: Date.now(), payload });
       SEARCH_IN_FLIGHT.delete(key);
       return payload;
@@ -81,7 +88,7 @@ export async function getNearby(lat, lon, radius = 50) {
   }
   if (IN_FLIGHT.has(key)) return IN_FLIGHT.get(key);
 
-  const promise = axios.get(`/nearby?lat=${lat}&lon=${lon}&radius=${radius}`).then((res) => {
+  const promise = api.get(`/nearby?lat=${lat}&lon=${lon}&radius=${radius}`).then((res) => {
     const payload = res.data;
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
@@ -102,7 +109,7 @@ export async function getRanking() {
   if (cached && (now - cached._ts) < TTL_MS) return cached.payload;
   if (IN_FLIGHT.has(key)) return IN_FLIGHT.get(key);
 
-  const promise = axios.get('/aqi-ranking').then((res) => {
+  const promise = api.get('/aqi-ranking').then((res) => {
     const payload = res.data;
     CACHE.set(key, { _ts: Date.now(), payload });
     IN_FLIGHT.delete(key);
