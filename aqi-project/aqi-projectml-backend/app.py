@@ -1361,6 +1361,7 @@ def _fetch_locality_aqi(locality, origin_lat, origin_lon):
             "landUseTag": " & ".join(land_use_tags) if land_use_tags else None,
             "landUseIcon": land_use_icon,
             "note": note_text,
+            "nearby_features": feature_context,
             # Location-aware analytics with industrial/traffic/water body context
             "analytics": {
                 "narrative": analytics_narrative,

@@ -58,7 +58,7 @@ function getLocalityIcon(locality) {
 // Locality environmental analytics heuristics
 // ─────────────────────────────────────────────────────────────────────────────
 function generateLocalityInsights(locality) {
-  const { composition = {}, aqi, landUseTag, note, analytics } = locality;
+  const { composition = {}, aqi, landUseTag, note, analytics, nearby_features } = locality;
   const pm25 = composition.pm2_5 || 0;
   const pm10 = composition.pm10 || 0;
   const no2  = composition.no2 || 0;
@@ -83,12 +83,52 @@ function generateLocalityInsights(locality) {
     if (risk && risk.level) tags.push(risk.level);
     if (analytics.kpis && analytics.kpis.highest_risk_region) tags.push("Region Insight");
     const summary = analytics.summary || nar.descriptive || nar.diagnostic || note || "Environmental analytics available.";
+    // If backend provided nearby features, include a short features note
+    if (nearby_features) {
+      const parts = [];
+      if (nearby_features.water_bodies && nearby_features.water_bodies.length) {
+        const w = nearby_features.water_bodies[0];
+        parts.push(`${w.name}${w.distance_km ? ` (${w.distance_km} km)` : ''}`);
+      }
+      if (nearby_features.industrial_zones && nearby_features.industrial_zones.length) {
+        const z = nearby_features.industrial_zones[0];
+        parts.push(`${z.name}${z.distance_km ? ` (${z.distance_km} km)` : ''}`);
+      }
+      if (parts.length) {
+        bullets.unshift(`Nearby features: ${parts.join(', ')}`);
+      }
+    }
     return { tags: [...new Set(tags)], bullets, note, summary };
   }
 
   // Land-use classification from tag
   if (landUseTag) {
     tags.push(landUseTag);
+  }
+
+  // Incorporate explicit nearby features if provided by backend
+  if (nearby_features) {
+    try {
+      if (Array.isArray(nearby_features.water_bodies) && nearby_features.water_bodies.length) {
+        const w = nearby_features.water_bodies[0];
+        tags.push("Near water");
+        bullets.unshift(`Nearest water body: ${w.name}${w.distance_km ? ` (${w.distance_km} km)` : ''}`);
+      }
+      if (Array.isArray(nearby_features.industrial_zones) && nearby_features.industrial_zones.length) {
+        const z = nearby_features.industrial_zones[0];
+        tags.push("Industrial Zone");
+        bullets.unshift(`Nearest industrial zone: ${z.name}${z.distance_km ? ` (${z.distance_km} km)` : ''}`);
+      }
+      if (Array.isArray(nearby_features.traffic_corridors) && nearby_features.traffic_corridors.length) {
+        const t = nearby_features.traffic_corridors[0];
+        if (t.name) tags.push("Traffic Corridor");
+      }
+      // Detect airport mention heuristically
+      const airportNearby = (nearby_features.industrial_zones || []).concat(nearby_features.traffic_corridors || []).some(f => /airport/i.test(f.name || ''));
+      if (airportNearby) tags.push('Airport nearby');
+    } catch (e) {
+      // ignore
+    }
   }
 
   // ── Pollutant-based heuristics ─────────────────────────────────────────────
