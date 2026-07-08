@@ -406,25 +406,26 @@ def build_analytics(components, aqi_value, city_name=None, lat=None, lon=None, h
             context_parts = []
             location_details = []
             if city_name and lat is not None and lon is not None:
-                context = _fetch_nearby_feature_context(city_name, lat, lon, components)
+                # Fetch structured nearby feature context but do not assign it directly to `context`.
+                context_obj = _fetch_nearby_feature_context(city_name, lat, lon, components)
 
-                if context["industrial"] and context["industrial_confidence"] > 0.3:
-                    loc_names = ", ".join(z.get("name") for z in context["industrial"][:2] if z.get("name"))
-                    proximity = context["industrial"][0].get("distance_km") if context["industrial"] else None
+                if context_obj and context_obj.get("industrial") and context_obj.get("industrial_confidence", 0) > 0.3:
+                    loc_names = ", ".join(z.get("name") for z in context_obj.get("industrial", [])[:2] if z.get("name"))
+                    proximity = context_obj.get("industrial", [])[0].get("distance_km") if context_obj.get("industrial") else None
                     if loc_names:
                         location_details.append(f"industrial zone(s) such as {loc_names}{' (' + str(proximity) + ' km away)' if proximity is not None else ''}")
                     else:
                         location_details.append("nearby industrial activity")
 
-                if context["traffic"] and context["traffic_confidence"] > 0.3:
-                    road_names = ", ".join(c.get("name") for c in context["traffic"][:2] if c.get("name"))
+                if context_obj and context_obj.get("traffic") and context_obj.get("traffic_confidence", 0) > 0.3:
+                    road_names = ", ".join(c.get("name") for c in context_obj.get("traffic", [])[:2] if c.get("name"))
                     if road_names:
                         location_details.append(f"traffic corridors like {road_names}")
                     else:
                         location_details.append("local high-density traffic")
 
-                if context["water"] and context["water_influence"] > 0.2:
-                    water_names = ", ".join(w.get("name") for w in context["water"][:2] if w.get("name"))
+                if context_obj and context_obj.get("water") and context_obj.get("water_influence", 0) > 0.2:
+                    water_names = ", ".join(w.get("name") for w in context_obj.get("water", [])[:2] if w.get("name"))
                     location_details.append(f"water bodies such as {water_names}")
 
             if location_details:
