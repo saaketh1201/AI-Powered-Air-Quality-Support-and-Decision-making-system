@@ -590,11 +590,7 @@ export default function NearbyAQIRanking({ lat: propLat, lon: propLon, city: pro
         </div>
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginRight: '0.5rem' }}>Demo:</div>
-          {['hyderabad','mumbai','pune','delhi'].map((c) => (
-            <button key={c} className={`aeris-btn-ghost`} onClick={() => loadDemoCity(c)} style={{ textTransform: 'capitalize' }}>
-              {c}
-            </button>
-          ))}
+          <button className="aeris-btn-ghost" onClick={loadHyderabadDemo} style={{ textTransform: 'capitalize' }}>Hyderabad</button>
         </div>
         {centerCity && (
           <div className="nearby-center-badge">
